@@ -1,0 +1,77 @@
+
+{
+    "mediaDetails": [
+      {
+        "id": "cc89",
+        "Title": "Death Bed",
+        "Artist or Producer": "Powfu",
+        "mediaUrl": "https://samplesongs.netlify.app/Death%20Bed.mp3",
+        "posterUrl": "https://samplesongs.netlify.app/album-arts/death-bed.jpg",
+        "mediaGenre": "Jazz",
+        "mediaTypeValue": "audio"
+      },
+      {
+        "id": "2211",
+        "Title": "Bad Liar",
+        "Artist or Producer": "Imagine Dragons",
+        "mediaUrl": "https://samplesongs.netlify.app/Bad%20Liar.mp3",
+        "posterUrl": "https://samplesongs.netlify.app/album-arts/bad-liar.jpg",
+        "mediaGenre": "R & B",
+        "mediaTypeValue": "audio"
+      },
+      {
+        "id": "543b",
+        "Title": "Faded",
+        "Artist or Producer": "Alan Walker",
+        "mediaUrl": "https://samplesongs.netlify.app/Faded.mp3",
+        "posterUrl": "https://samplesongs.netlify.app/album-arts/faded.jpg",
+        "mediaGenre": "R & B",
+        "mediaTypeValue": "audio"
+      },
+      {
+        "id": "5b8e",
+        "Title": "Hate Me",
+        "Artist or Producer": "Ellie Goulding",
+        "mediaUrl": "https://samplesongs.netlify.app/Hate%20Me.mp3",
+        "posterUrl": "https://samplesongs.netlify.app/album-arts/hate-me.jpg",
+        "mediaGenre": "Soul",
+        "mediaTypeValue": "audio"
+      },
+      {
+        "id": "2196",
+        "Title": "Solo",
+        "Artist or Producer": "Clean Bandit",
+        "mediaUrl": "https://samplesongs.netlify.app/Solo.mp3",
+        "posterUrl": "https://samplesongs.netlify.app/album-arts/solo.jpg",
+        "mediaGenre": "Afro pop",
+        "mediaTypeValue": "audio"
+      },
+      {
+        "id": "ac77",
+        "Title": "Without Me",
+        "Artist or Producer": "Halsey",
+        "mediaUrl": "https://samplesongs.netlify.app/Without%20Me.mp3",
+        "posterUrl": "https://samplesongs.netlify.app/album-arts/without-me.jpg",
+        "mediaGenre": "Afro pop",
+        "mediaTypeValue": "audio"
+      },
+      {
+        "id": "88ef",
+        "Title": "Cast",
+        "Artist or Producer": "Shalipopi",
+        "mediaUrl": "https://cdn.trendybeatz.com/audio/Shallipopi-Ft-Cast-Odumodublvck-(TrendyBeatz.com).mp3",
+        "posterUrl": "https://trendybeatz.com/images/Shallipopi-Presido-La-Pluto-AlbumArtwork1.jpg",
+        "mediaGenre": "Jazz",
+        "mediaTypeValue": "audio"
+      },
+      {
+        "id": "589f",
+        "Title": "Fight Night",
+        "Artist or Producer": "Kevin Hart",
+        "mediaUrl": "Fight.Night.The.Million.Dollar.Heist.S01E05.(Netnaija.xyz).mkv",
+        "posterUrl": "music-image.png",
+        "mediaGenre": "Thriller",
+        "mediaTypeValue": "video"
+      }
+    ]
+  }  

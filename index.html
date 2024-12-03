@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0271217e1a.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="phone.css">
+    <link rel="stylesheet" href="musicplayer.css">
+    <title>Phone</title>
+</head>
+<body>
+    
+    <main class="w-100 vh-100 d-flex flex-column justify-content-center align-items-center">
+        <div class="mb-5">operate phone like an Iphone. password: 202019</div>
+        <div class="rounded-5 phone-container position-relative">
+            <div class="speaker position-absolute w-25 rounded-pill d-flex flex-column justify-content-center align-items-center">
+            </div>
+            <button class="on-off position-absolute" id="on-off"></button>
+            <div class="volume-controls position-absolute">
+                <button class="vol-up" id="vol-up"></button>
+                <button class="vol-down" id="vol-down"></button>
+            </div>
+            <div class="screen position-relative overflow-hidden rounded-2" id="screen">
+                <div class="screen-saver text-center text-light position-absolute h-100 w-100 rounded-2 top-0 start-0" id="screen-saver">
+                    <div class="time-date" id="time-date"></div>
+                    <p class="month-year" id="month-year"></p>
+                    <!-- Screen saver contains password-display to unlock and lock-screen page -->
+                    <div class="password-display position-absolute w-100 h-100 rounded-2 gap-4 p-3 flex-column justify-content-center align-items-center">
+                        <div class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="instruction">
+                                <p class="text-light">Enter Passcode</p>
+                                <p id="errorTag"></p>
+                            </div>
+                            <div class="password-input-container">
+                                <input type="password" id="otp-input" maxlength="6" autofocus/>
+                                <div class="otp-bullets">
+                                    <span id="otp-bullet-1"></span>
+                                    <span id="otp-bullet-2"></span>
+                                    <span id="otp-bullet-3"></span>
+                                    <span id="otp-bullet-4"></span>
+                                    <span id="otp-bullet-5"></span>
+                                    <span id="otp-bullet-6"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="digit d-flex flex-row justify-content-center align-items-center flex-wrap gap-3" id="digit">
+                            <button class="rounded-circle bg-transparent border border-secondary fs-3 text-light" oncli> 1 </button>
+                            <button class="rounded-circle bg-transparent border border-secondary fs-3 text-light"> 2 </button>
+                            <button class="rounded-circle bg-transparent border border-secondary fs-3 text-light"> 3 </button>
+                            <button class="rounded-circle bg-transparent border border-secondary fs-3 text-light"> 4 </button>
+                            <button class="rounded-circle bg-transparent border border-secondary fs-3 text-light"> 5 </button>
+                            <button class="rounded-circle bg-transparent border border-secondary fs-3 text-light"> 6 </button>
+                            <button class="rounded-circle bg-transparent border border-secondary fs-3 text-light"> 7 </button>
+                            <button class="rounded-circle bg-transparent border border-secondary fs-3 text-light"> 8 </button>
+                            <button class="rounded-circle bg-transparent border border-secondary fs-3 text-light"> 9 </button>
+                            <button class="rounded-circle bg-transparent border border-secondary fs-3 text-light"> 0 </button>
+                        </div>
+                        <div class="emergency d-flex flex-row justify-content-between align-items-center" id="emergency">
+                            <div class="text-light">Emergency</div>
+                            <button class="text-light bg-transparent outline-0 border-0" id='delete'> Cancel </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="home-page position-absolute d-flex flex-row flex-wrap justify-content-start align-items-start rounded-2 h-100 w-100 bottom-0 start-0">
+                    <div class="icons d-flex flex-row flex-wrap justify-content-center align-items-start gap-4">
+                        <img src="call-removebg-preview (1).png" alt="">
+                        <img src="message-removebg-preview.png" alt="">
+                        <img src="safari-removebg-preview.png" alt="">
+                        <img class="music-logo" src="music-removebg-preview.png" alt="">
+                        <img class="rounded-3 camera" src="camera.jpg" alt="" style="width: 50px;">
+                        <img src="game.png" alt="" id="game-icon">
+                        <img src="gallery-removebg-preview.png" alt="" class="galleryIcon">
+                        <img src="chat-removebg-preview.png" alt="">
+            
+                        <div class="rounded-3 special d-flex flex-column justify-content-center align-items-center text-center text-light fw-semibold bg-primary px-2 py-4">
+                            CBT<BR>MAKER
+                        </div>
+                        <img src="Settings__iOS_-removebg-preview.png" id="settings" alt="" style="height: 70px;">
+                    </div>
+                    <div class="screen-saver-base position-absolute bottom-0 start-0 w-100 d-flex flex-row justify-content-evenly flex-wrap align-items-center">
+                        <div class="btn bg-transparent border-0 outline-0">
+                            <img src="call-removebg-preview (1).png" alt="">
+                        </div>
+                        <div class="btn bg-transparent border-0 outline-0">
+                            <img src="message-removebg-preview.png" alt="">
+                        </div>
+                        <div class="btn bg-transparent border-0 outline-0">
+                            <img src="safari-removebg-preview.png" alt="">
+                        </div>
+                        <div class="btn music-logo bg-transparent border-0 outline-0">
+                            <img src="music-removebg-preview.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="display-others rounded-2 position-absolute h-100 w-100 bottom-0 start-0" id="displayAll" style="background-color: white;"></div>
+                <div class="locked-screen-dark rounded-2 bg-black position-absolute h-100 w-100 bottom-0 start-0" id="darkPage"></div>
+            </div>
+            <button class="lock-screen rounded-circle position-absolute outline-0 border-0" id="lock-screen"></button>
+        </div>
+    </main>
+</body>
+</html>
+
+<script>
+    // grab digits div
+    let digits = document.querySelectorAll('.digit button');
+    let passwordInputTag = document.getElementById('otp-input');
+    let cancelButton = document.getElementById('delete');
+    const pwPageDisplay = document.querySelector('.password-display');
+    const darkPage = document.getElementById('darkPage')
+    const screenSaver = document.getElementById('time-date')
+    const homePage = document.querySelector('.home-page')
+    const myScreenSaver = document.querySelector('.screen-saver')
+    const otpBullets = document.querySelectorAll('.otp-bullets span');
+    const displayAll = document.getElementById('displayAll')
+    const galleryIcon = document.querySelector('.galleryIcon')
+    let inputLength = ''
+    let audioPlay
+    let locked = true
+    let opened = false
+    let password = 199176
+    let alarmTime = JSON.parse(localStorage.getItem('alarm')) || 0
+    let myPassword = JSON.parse(localStorage.getItem('new-password')) || password
+    let homePageSaverSrc = JSON.parse(localStorage.getItem('home-page-screen')) || []
+    
+    // Set homepage's background
+function homePageScreenSaver(){
+    homePageSaverSrc[0] ?homePage.style.background = `url('${homePageSaverSrc[0]}')` :homePage.style.background = `url('screen3.jpg')`
+    homePage.style.backgroundPosition= 'center';
+    homePage.style.backgroundRepeat= 'no-repeat';
+    homePage.style.backgroundSize=  'cover';
+}
+homePageScreenSaver()
+    
+    // Function that append digits to the password input field
+    function displayHome() {
+        myScreenSaver.style.transform = 'translateY(-98%)'
+        myScreenSaver.style.background = 'transparent'
+        myScreenSaver.style.zIndex = 3
+        pwPageDisplay.style.display ='none' 
+        homePage.style.zIndex = 2
+        displayAll.style.zindex = -1
+    }
+
+    // Function to display other page
+    function displayOtherPages() {
+        myScreenSaver.style.transform = 'translateY(-98%)'
+        myScreenSaver.style.background = 'transparent'
+        myScreenSaver.style.zIndex = 3
+        pwPageDisplay.style.display ='none' 
+        homePage.style.zIndex = -1
+        displayAll.style.zindex = 2
+    }
+
+
+    digits.forEach((digit, index) => {
+        digit.addEventListener('click', (e)=>{
+            let errorTag = document.getElementById('errorTag')
+            let instruction = document.querySelector('.instruction')
+            if(passwordInputTag.value.length === 6){
+                return
+            }
+            if (passwordInputTag.value.length === 5){
+                passwordInputTag.value += (e.target.innerText)
+                if (passwordInputTag.value == myPassword) {
+                    locked = false
+                    setTimeout(() => {
+                    displayHome()
+                    }, 1000);
+                    opened = true
+                    passwordInputTag.value = ''
+                }else{    
+                    errorTag.innerText = 'Incorrect password. Try again'
+                    errorTag.style.fontSize = 'xx-small'
+                    errorTag.style.color = 'white'
+                    passwordInputTag.value = ''
+                    locked= true
+                }
+            }else if (passwordInputTag.value.length === 0 && errorTag.innerText != '') { 
+                errorTag.innerText = ''
+                passwordInputTag.value += (e.target.innerText) 
+                locked = true   
+            }else{
+                passwordInputTag.value += (e.target.innerText) 
+                locked = true
+            }
+            
+            if (passwordInputTag.value.length != 0) {
+                cancelButton.innerText = 'Delete'
+            }else{
+                cancelButton.innerText = 'Cancel'
+            }
+            updateFilledBullets()
+            
+        })
+    })
+    
+function updateFilledBullets() {
+  otpBullets.forEach((bullet, index) => {
+    if (index < passwordInputTag.value.length) {
+      bullet.classList.add('filled');
+    } else {
+      bullet.classList.remove('filled');
+    }
+  });
+}
+cancelButton.addEventListener('click', (e) => {
+    if (cancelButton.innerText === 'Cancel' && pwPageDisplay.style.display != 'none') {
+        pwPageDisplay.style.display = 'none'
+    }
+    passwordInputTag.value = passwordInputTag.value.slice(0, -1)
+    inputLength--
+    removeLastFilledBullet();
+    
+    if (inputLength === 0) {
+        cancelButton.innerHTML = 'Cancel'
+    }
+});
+
+function removeLastFilledBullet() {
+  const lastFilledBullet = Array.from(otpBullets).reverse().find(bullet => bullet.classList.contains('filled'));
+  if (lastFilledBullet) {
+    lastFilledBullet.classList.remove('filled');
+}
+}
+
+document.querySelector('#on-off').addEventListener('click', ()=>{
+    locked = !locked
+    if (locked) {
+        darkPage.style.zIndex = 2
+        myScreenSaver.style.transform = 'translateY(0)'
+        myScreenSaver.style.zIndex = 1
+        homePage.style.zIndex = -1
+        pwPageDisplay.style.display = 'none'
+        myScreenSaver.style.background = 'linear-gradient(rgba(20, 20, 20, .7) 10%, rgba(24, 48, 24, .7) 100%), url(\'lockscreen.jpg\')'
+        myScreenSaver.style.backgroundPosition = 'center'
+        myScreenSaver.style.backgroundRepeat = 'no-repeat'
+        myScreenSaver.style.backgroundSize = 'cover'
+        opened = false
+    }else{
+        darkPage.style.zIndex = -1
+    }
+})
+// Function that displays clock
+function clockDisplay(){
+    const monthYear = document.getElementById('month-year')
+setInterval(() => {
+        let newDate = new Date()
+    screenSaver.innerHTML = newDate.toLocaleTimeString().slice(0,4)
+    monthYear.innerText = newDate.toDateString()
+    
+    }, 1000);
+ screenSaver.style.color = 'rgba(255,253,253, .9)'
+ screenSaver.style.fontSize = '50px'
+ screenSaver.style.textAlign = 'center'
+ screenSaver.style.paddingTop = '20%'
+ screenSaver.style.fontWeight = 'light'
+ screenSaver.style.fontFamily = 'sans-serif'
+}
+clockDisplay();
+
+
+let lockButton = document.querySelector('.lock-screen');
+lockButton.addEventListener('mouseover', ()=>{
+    if (!locked){
+        return
+    }
+    if (locked && darkPage.style.zIndex > myScreenSaver.style.zIndex){
+        
+        darkPage.style.zIndex = -1
+    }else{
+        darkPage.style.zIndex = -1
+    }
+})
+
+lockButton.addEventListener('mouseout', ()=>{
+if (!locked) {
+    return
+}
+    if (locked && pwPageDisplay.style.display === 'flex'){
+        return
+    }
+    
+    darkPage.style.zIndex = 2
+   
+})
+
+// Password validation 
+
+
+lockButton.addEventListener('click', ()=>{
+   if(audioPlay){
+    audioPlay.pause()
+   }
+    locked = false
+    if (opened === false ){
+       darkPage.style.zIndex = -1
+       myScreenSaver.style.index = 2
+       pwPageDisplay.style.display = 'flex' 
+    }else{
+        displayHome() 
+    }
+    // lockButton.style.transform = 'translateY(-5px)'
+    
+})
+
+// Dragging down the screen saver
+myScreenSaver.addEventListener('click', ()=>{
+    if (!opened){
+        return
+    }
+    if (myScreenSaver.style.transform === 'translateY(-98%)') {
+        myScreenSaver.style.transform = 'translateY(0)'
+        myScreenSaver.style.background = 'linear-gradient(rgba(20, 20, 20, .7) 10%, rgba(24, 48, 24, .7) 100%), url(\'lockscreen.jpg\')'
+        myScreenSaver.style.backgroundPosition = 'center'
+        myScreenSaver.style.backgroundRepeat = 'no-repeat'
+        myScreenSaver.style.backgroundSize = 'cover'
+    }else{ 
+        myScreenSaver.style.transform = 'translateY(-98%)'
+        setTimeout(() => {
+            myScreenSaver.style.background = 'transparent'
+        }, 1000);
+    }
+        
+        pwPageDisplay.style.display = 'none'
+        
+        myScreenSaver.style.transitionDuration = '1s'
+        myScreenSaver.style.transitionProperty = 'all'
+        myScreenSaver.style.transitionTimingFunction = 'ease-in-out'
+})
+</script>
+<script src="camera.js"></script>
+<script src="music-player.js"></script>
+<script src="game.js"></script>
+<script src="settings.js"></script>
+<script src="gallery.js"></script>
